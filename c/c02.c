@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:11:51 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/04 04:09:55 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/04 16:13:31 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,16 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 void			ft_putstr_non_printable(char *str);
 char			*ft_print_memory(void *addr, unsigned int size);
 
-int main(void)
+int main(int argc, char** argv)
 {
+	char *mem = "Bonjour les aminches\n\b\rc  est fou\ntout\rce qu on peut faire avec\r\r\nprint_memory\n\n\r\blol\rlol\r \b";
+
+	if (argc > 1 && strcmp(argv[1], "12") == 0)
+	{
+		ft_print_memory(mem, strlen(mem));
+		return (0);
+	}
+
 	printf("-- Exercicio 00: ");
 
 	char str0[] = "Ninguem liga";
@@ -51,17 +59,17 @@ int main(void)
 	else if (ret1 = strcpy(buffer0, str0), ret0 != ret1)
 		printf("KO, expected return %p got %p", ret1, ret0);
 
-	else if (ret0 = ft_strcpy(buffer0, str1), ft_strcpy(buffer1, str1), strcmp(buffer0, buffer1) != 0)
+	else if (ret0 = ft_strcpy(buffer0, str1), strcpy(buffer1, str1), strcmp(buffer0, buffer1) != 0)
 		printf("KO, expected %s got %s", buffer1, buffer0);
 	else if (ret1 = strcpy(buffer0, str1), ret0 != ret1)
 		printf("KO, expected return %p got %p", ret1, ret0);
 
-	else if (ret0 = ft_strcpy(buffer0, str2), ft_strcpy(buffer1, str2), strcmp(buffer0, buffer1) != 0)
+	else if (ret0 = ft_strcpy(buffer0, str2), strcpy(buffer1, str2), strcmp(buffer0, buffer1) != 0)
 		printf("KO, expected %s got %s", buffer1, buffer0);
 	else if (ret1 = strcpy(buffer0, str2), ret0 != ret1)
 		printf("KO, expected return %p got %p", ret1, ret0);
 
-	else if (ret0 = ft_strcpy(buffer0, str3), ft_strcpy(buffer1, str3), strcmp(buffer0, buffer1) != 0)
+	else if (ret0 = ft_strcpy(buffer0, str3), strcpy(buffer1, str3), strcmp(buffer0, buffer1) != 0)
 		printf("KO, expected %s got %s", buffer1, buffer0);
 	else if (ret1 = strcpy(buffer0, str3), ret0 != ret1)
 		printf("KO, expected return %p got %p", ret1, ret0);
@@ -120,6 +128,7 @@ int main(void)
 	printf("-- Exercicio 03: ");
 	char nums[] = "092885103418801";
 
+
 	if (ft_str_is_numeric(nums) != 1)
 		printf("KO, %s is numeric", nums);
 	else if (ft_str_is_numeric(str1) != 0)
@@ -137,6 +146,7 @@ int main(void)
 
 	printf("-- Exercicio 04: ");
 	char lower[] = "asdgsdghineiodsf";
+
 
 	if (ft_str_is_lowercase(lower) != 1)
 		printf("KO, %s is lowercase", lower);
@@ -210,6 +220,7 @@ EX07:
 	char to_upper0[] = "aBbasdsadfSDAFasdf";
 	char to_upper1[] = "aice!3$fasdFEDad";
 
+
 	if (ft_strupcase(to_upper0) != to_upper0)
 		printf("KO, wrong return");
 	else if (ft_strupcase(to_upper1) != to_upper1)
@@ -243,11 +254,16 @@ EX07:
 
 	printf("-- Exercicio 09: ");
 	char cap0[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	char cap1[] = "voT{r^+t,^~,@ f>lC9h.sn99";
 
 	if (ft_strcapitalize(cap0) != cap0)
 		printf("KO, wrong return");
 	else if (strcmp(cap0, "Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un") != 0)
 		printf("KO, expected Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un got %s", cap0);
+	if (ft_strcapitalize(cap1) != cap1)
+		printf("KO, wrong return");
+	else if (strcmp(cap1, "Vot{R^+T,^~,@ F>Lc9h.Sn99") != 0)
+		printf("KO, expected Vot{R^+T,^~,@ F>Lc9h.Sn99 got %s", cap1);
 	else
 		printf("OK");
 
@@ -283,21 +299,21 @@ EX07:
 
 	printf("-- Exercicio 11: Compare as strings\n");
 	char strtest0[] = {'0', '1', 3, 26, '2', '3', 12, 'f', '\n', 'a', 'b', '\0'};
-	char strtest1[] = {'0', 'C', 'b', 127, 2, 'a', 'b', -1, '\0'};
+	char strtest1[] = {'0', 'C', 'b', 127, 2, 'a', -82, 'b', -1, '\0'};
 
 	char strans0[] = "01\\03\\1a23\\0cf\\0aab";
-	char strans1[] = "0Cb\\7f\\02ab\\-01";
+	char strans1[] = "0Cb\\7f\\02a\\aeb\\ff";
 
 	ft_putstr_non_printable(strtest0);
 	printf("\t==\t%s\n", strans0);
 
 	ft_putstr_non_printable(strtest1);
-	printf("\t\t==\t%s\n", strans1);
+	printf("\t==\t%s\n", strans1);
 
 	printf("\n");
 
 	printf("-- Exercicio 12: Verifique o output\n");
-	char *mem = "Bonjour les aminches\n\b\rc  est fou\ntout\rce qu on peut faire avec\r\r\nprint_memory\n\n\r\blol\rlol\r \b";
+
 	printf("\nCaso 1:\n");
 	char *ret = ft_print_memory(mem, strlen(mem));
 
@@ -333,6 +349,16 @@ EX07:
 		printf("\n\tKO, return %p is not addr %p\n", ret, mem);
 		return 1;
 	}
+
+	printf("\nCaso 5:\n");
+	ret = ft_print_memory(mem, 1);
+
+	if (ret != mem)
+	{
+		printf("\n\tKO, return %p is not addr %p\n", ret, mem);
+		return 1;
+	}
+
 	printf("\n");
 }
 
