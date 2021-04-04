@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   c02.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:11:51 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/04 01:54:18 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/04 04:09:55 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,6 @@ int main(void)
 	printf("\n");
 
 
-EX06:
 	printf("-- Exercicio 06: ");
 	buffer0[1] = 0;
 
@@ -225,7 +224,6 @@ EX07:
 
 	printf("\n");
 
-EX08:
 	printf("-- Exercicio 08: ");
 	char to_lower0[] = "SAHDUFUASddaAFEAD";
 	char to_lower1[] = "adsiEAFEASDFAD0-=+[]asdifAFeajafielIJIHHIJ";
@@ -243,7 +241,6 @@ EX08:
 
 	printf("\n");
 
-EX09:
 	printf("-- Exercicio 09: ");
 	char cap0[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 
@@ -256,7 +253,6 @@ EX09:
 
 	printf("\n");
 
-EX10:
 	printf("-- Exercicio 10: ");
 
 	size_t ret0s, ret1s;
@@ -285,12 +281,11 @@ EX10:
 		printf("OK");
 	printf("\n");
 
-EX11:
 	printf("-- Exercicio 11: Compare as strings\n");
 	char strtest0[] = {'0', '1', 3, 26, '2', '3', 12, 'f', '\n', 'a', 'b', '\0'};
 	char strtest1[] = {'0', 'C', 'b', 127, 2, 'a', 'b', -1, '\0'};
 
-	char strans0[] = "0123\\03\\1a23\\0cf\\0aab";
+	char strans0[] = "01\\03\\1a23\\0cf\\0aab";
 	char strans1[] = "0Cb\\7f\\02ab\\-01";
 
 	ft_putstr_non_printable(strtest0);
@@ -301,13 +296,43 @@ EX11:
 
 	printf("\n");
 
-EX12:
 	printf("-- Exercicio 12: Verifique o output\n");
-	char *mem ="Bonjour les aminches\n\b\rc  est fou\ntout\rce qu on peut faire avec\r\r\nprint_memory\n\n\r\blol\rlol\r \b";
+	char *mem = "Bonjour les aminches\n\b\rc  est fou\ntout\rce qu on peut faire avec\r\r\nprint_memory\n\n\r\blol\rlol\r \b";
+	printf("\nCaso 1:\n");
 	char *ret = ft_print_memory(mem, strlen(mem));
 
 	if (ret != mem)
-		printf("\n KO, return %p is not addr %p", ret, mem);
+	{
+		printf("\n\tKO, return %p is not addr %p\n", ret, mem);
+		return 1;
+	}
 
+	printf("\nCaso 2:\n");
+	ret = ft_print_memory(str2, 35);
+
+	if (ret != str2)
+	{
+		printf("\n\tKO, return %p is not addr %p\n", ret, str2);
+		return 1;
+	}
+
+	printf("\nCaso 3, não deve haver nada:\n");
+	ret = ft_print_memory(str2, 0);
+
+	if (ret != str2)
+	{
+		printf("\n\tKO, return %p is not addr %p\n", ret, str2);
+		return 1;
+	}
+
+	printf("\nCaso 4:\n");
+	ret = ft_print_memory(mem, (strlen(mem) - 12));
+
+	if (ret != mem)
+	{
+		printf("\n\tKO, return %p is not addr %p\n", ret, mem);
+		return 1;
+	}
+	printf("\n");
 }
 
