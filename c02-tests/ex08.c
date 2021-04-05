@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 20:50:42 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/03 21:10:10 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:05:11 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(void)
 	ft_strlowcase(str1);
 	ft_strlowcase(str2);
 	ft_strlowcase(str3);
-	printf("str1: %s\n", str1);
-	printf("str2: %s\n", str2);
-	printf("str3: %s\n", str3);
+	printf("str1_low: %s\n", str1);
+	printf("str2_low: %s\n", str2);
+	printf("str3_low: %s\n", str3);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 17:49:28 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/01 22:11:11 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:00:26 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	main(void)
 	ft_putnbr(-10);
 	write(1,"\n10 ",5);
 	ft_putnbr(10);
-	write(1,"\nINT_MAX ",9);
+	write(1,"\nINT_MAX: ",10);
 	ft_putnbr(INT_MAX);
-	write(1,"\nINT_MIN ",9);
+	write(1,"\nINT_MIN: ",10);
 	ft_putnbr(INT_MIN);
 	write(1,"\n",1);
 	return (0);
