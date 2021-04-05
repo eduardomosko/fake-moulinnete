@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:11:51 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/05 04:02:58 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 14:27:47 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,8 +141,7 @@ int main(void)
 	else if (strncmp(buffer0, buffer1, 100) != 0)
 		printf("KO, test01 expected %s got %s\n", buffer1, buffer0);
 
-	printf("buffer1: %s buffer0: %s\n", buffer1, buffer0);
-	if ((ret1l = strlcat(buffer1, str2, 1)) != (ret0l = ft_strlcat(buffer0, str2, 1)))
+	else if ((ret1l = strlcat(buffer1, str2, 1)) != (ret0l = ft_strlcat(buffer0, str2, 1)))
 		printf("KO, test02 wrong return expected %i got %i\n", ret1l, ret0l);
 	else if (strncmp(buffer0, buffer1, 100) != 0)
 		printf("KO, test02 expected %s got %s\n", buffer1, buffer0);
