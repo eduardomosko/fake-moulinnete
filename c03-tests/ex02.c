@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:14:17 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/05 15:40:34 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:38:27 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	main(void)
 	result = strcat(dest, src);
 	ft_result = strcat(ft_dest, ft_src);
 	if (ft_dest != ft_result)
-		printf("KO, return value of ft_strcar is different of ft_dest.\n");
+		printf("KO, return value of ft_strcar is different of ft_dest. ft_strcar=%p ft_dest=%p\n", ft_result, ft_dest);
 	else if (strcmp(result, ft_result) != 0)
 		printf("KO, value returned from strcmp with ft_strcat and strcat is different of zero(%d).\n", strcmp(result, ft_result));
 	else
-		printf("OK\n");
+		printf("OK.\nresult: %s\n", ft_result);
 	return (0);
 }
