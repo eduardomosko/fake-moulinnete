@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:17:14 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/06 00:19:41 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/04/06 00:47:02 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,17 @@ int	main(void)
 	char 			*dest;
 	char 			*ft_dest;
 
-	dest = calloc(11, sizeof(char));
-	ft_dest = calloc(11, sizeof(char));
-	src = "0123456789";
+	src = calloc(100, sizeof(char));
+	dest = calloc(100, sizeof(char));
+	ft_dest = calloc(100, sizeof(char));
+	n = 0;
+	srand(0);
+	while (n < 99)
+	{
+		src[n] = rand() % 90 + '0' >  126 ? '.' : rand() % 90 + '0';
+		n++;
+	}
+	src[n] = '\0';
 	n = 0;
 	while (n < 100)
 	{
