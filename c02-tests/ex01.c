@@ -6,27 +6,46 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:17:14 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/03 16:21:47 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/04/06 00:19:41 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
+
+void	ft_strncpy_test(char *dest, char *ft_dest, char *src, unsigned int n)
+{
+	char *res;
+	char *ft_res;
+
+	res = strncpy(dest, src, n);
+	ft_res = ft_strncpy(ft_dest, src, n);
+	if (ft_res != ft_dest)
+		printf("> KO, return addres doesn't match *ft_dest, expected: %p, got: %p\n", ft_res, ft_dest);
+	else if (strcmp(res, ft_res) != 0)
+		printf("> KO, string has not been copied properly, expected: %s, got: %s\n", res, ft_res);
+	else
+		printf("> OK, result: %s\n", ft_res);
+}
 
 int	main(void)
 {
 	unsigned int	n;
 	char 			*src;
 	char 			*dest;
+	char 			*ft_dest;
 
-	src = calloc(11, sizeof(char));
 	dest = calloc(11, sizeof(char));
+	ft_dest = calloc(11, sizeof(char));
 	src = "0123456789";
-	n = 8;
-	printf("src: %s\n", src);
-	ft_strncpy(dest, src, n);
-	printf("dest up to %d: %s\n", n, dest); 
+	n = 0;
+	while (n < 100)
+	{
+		ft_strncpy_test(dest, ft_dest, src, n);
+		n++;
+	}
 	return (0);
 }
