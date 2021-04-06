@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:11:51 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/06 01:38:23 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/06 02:12:38 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,8 +133,16 @@ int main(void)
 		printf("KO test02\n");
 	else if (strstr(findin0, "213") != ft_strstr(findin0, "213"))
 		printf("KO test03\n");
-	else if (strstr(findin0, "555555") != ft_strstr(findin0, "555555"))
-		printf("KO test03\n");
+	else if (strstr(findin2, "555555") != ft_strstr(findin2, "555555"))
+		printf("KO test04\n");
+	else if (strstr(findin2, "") != ft_strstr(findin2, ""))
+		printf("KO test05\n");
+	else if (strstr(findin0, "123") != ft_strstr(findin0, "123"))
+		printf("KO test06\n");
+	else if (strstr(findin0, "asdfasdfstringasa") != ft_strstr(findin0, "asdfasdfstringasa"))
+		printf("KO test07\n");
+	else if (strstr(findin0, "asdfasdfstringasa") != ft_strstr(findin0, "asdfasdfstringasa"))
+		printf("KO test08\n");
 	else
 		printf("OK\n");
 
