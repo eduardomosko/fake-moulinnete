@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c03.c                                              :+:      :+:    :+:   */
+/*   all.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:11:51 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/05 14:27:47 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/06 01:38:23 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,12 @@ int main(void)
 	printf("-- Exercício 02: ");
 	char buffer0[100];
 	char buffer1[100];
+
 	int i = 0;
 	while (i < 100)
 	{
-		buffer0[i] = 0;
-		buffer1[i] = 0;
+		buffer0[i] = 'a';
+		buffer1[i] = 'a';
 		++i;
 	}
 
@@ -87,17 +88,34 @@ int main(void)
 		printf("KO, test00 wrong return\n");
 	else if (strcmp(buffer0, buffer1) != 0)
 		printf("KO, test00 expected %s got %s\n", buffer1, buffer0);
+	else if (strcat(buffer1, "ba ba ta ta"), buffer0 != ft_strcat(buffer0,  "ba ba ta ta"))
+		printf("KO, test00 wrong return\n");
+	else if (strcmp(buffer0, buffer1) != 0)
+		printf("KO, test00 expected %s got %s\n", buffer1, buffer0);
 	else
 		printf("OK\n");
 
 	printf("-- Exercício 03: ");
 
-	size_t sizebef = strlen(buffer1);
+	i = 0;
+	while (i < 100)
+	{
+		buffer0[i] = 'a';
+		buffer1[i] = 'a';
+		++i;
+	}
+
+	strcpy(buffer0, str1);
+	strcpy(buffer1, str1);
 
 	if (strncat(buffer1, str3, 3), buffer0 != ft_strncat(buffer0, str3, 3))
 		printf("KO, test00 wrong return\n");
-	else if (strncmp(buffer0, buffer1, sizebef + 20) != 0)
+	else if (strcmp(buffer0, buffer1) != 0)
 		printf("KO, test00 expected %s got %s\n", buffer1, buffer0);
+	else if (strncat(buffer1, str1, 100), buffer0 != ft_strncat(buffer0, str1, 100))
+		printf("KO, test01 wrong return\n");
+	else if (strcmp(buffer0, buffer1) != 0)
+		printf("KO, test01 expected %s got %s\n", buffer1, buffer0);
 	else
 		printf("OK\n");
 
@@ -114,6 +132,8 @@ int main(void)
 	else if (strstr(findin2, "213") != ft_strstr(findin2, "213"))
 		printf("KO test02\n");
 	else if (strstr(findin0, "213") != ft_strstr(findin0, "213"))
+		printf("KO test03\n");
+	else if (strstr(findin0, "555555") != ft_strstr(findin0, "555555"))
 		printf("KO test03\n");
 	else
 		printf("OK\n");
