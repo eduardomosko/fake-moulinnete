@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 03:56:12 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/06 17:33:52 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/07 03:36:03 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,10 @@ int main(void)
 		printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, fibo 6 is 8, got %i", ret);
 	else if ((ret = ft_fibonacci(6)) != 8)
 		printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, fibo 6 is 8, got %i", ret);
+	else if ((ret = ft_fibonacci(-27)) != -1)
+		printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, fibo -27 is -1, got %i", ret);
+	else if ((ret = ft_fibonacci(-23532)) != -1)
+		printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, fibo -23532 is -1, got %i", ret);
 #ifndef FAST
 	else if ((ret = ft_fibonacci(20)) != 6765)
 		printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, fibo 20 is 6765, got %i", ret);
@@ -185,7 +189,7 @@ int main(void)
 
 	ft_ten_queens_puzzle();
 
-	//if ((ret = ft_ten_queens_puzzle()) != -1)
-		//printf("KO, wrong return, expected ? got %i\n", ret);
+	if ((ret = ft_ten_queens_puzzle()) != 724)
+		printf("KO, wrong return, expected 724 got %i\n", ret);
 
 }
