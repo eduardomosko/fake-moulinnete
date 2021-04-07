@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:17:14 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/06 00:47:02 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/04/06 16:57:54 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ int	main(void)
 	while (n < 99)
 	{
 		src[n] = rand() % 90 + '0' >  126 ? '.' : rand() % 90 + '0';
+		n++;
+	}
+	src[n] = '\0';
+	n = 0;
+	while (n < 100)
+	{
+		ft_strncpy_test(dest, ft_dest, src, n);
+		n++;
+	}
+	while (n < 99)
+	{
+		src[n] = rand() % 90 + '0' >  126 ? '.' : rand() % 90 + '0';
+		dest[n] = rand() % 88 + '0' >  126 ? '.' : rand() % 88 + '0';
 		n++;
 	}
 	src[n] = '\0';
