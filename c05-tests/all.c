@@ -6,12 +6,13 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 03:56:12 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/07 21:34:50 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/08 19:20:18 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <time.h>
+#include <limits.h>
 
 int	ft_iterative_factorial(int nb);
 int	ft_recursive_factorial(int nb);
@@ -186,6 +187,7 @@ int main(void)
 	else if ((ret = ft_find_next_prime(13)) != 13) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 4 is 5, got %i", ret);
 	else if ((ret = ft_find_next_prime(5982)) != 5987) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 5982 is 5987, got %i", ret);
 	else if ((ret = ft_find_next_prime(2000000000)) != 2000000011) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 2000000000 is 2000000011, got %i", ret);
+	else if ((ret = ft_find_next_prime(INT_MAX - 11)) != INT_MAX) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after INT_MAX - 11 is INT_MAX, got %i", ret);
 	else if ((ret = ft_find_next_prime(-50)) != 2) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after -50 is 2, got %i", ret);
 	else if ((time_bef = (time(NULL) - time_bef)) > 10) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, timeout! max time is 10 seconds, took %li", time_bef);
 	else
@@ -207,5 +209,4 @@ int main(void)
 		printf("KO, wrong return, expected 724 got %i\n", ret);
 	else
 		printf("OK, time: %li seconds\n", time_bef);
-
 }
