@@ -6,11 +6,12 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 03:56:12 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/07 03:36:03 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/07 21:34:50 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <time.h>
 
 int	ft_iterative_factorial(int nb);
 int	ft_recursive_factorial(int nb);
@@ -171,25 +172,40 @@ int main(void)
 	else
 		printf("OK\n");
 
-	printf("\e[1;31m-- Exercício 07: \e[0m");
+	printf("\e[1;31m-- Exercício 07: \e[0mCalculando....");
+	fflush(stdout);
 
-	if ((ret = ft_find_next_prime(0)) != 2) printf("KO, prime after 0 is 2");
-	else if ((ret = ft_find_next_prime(2)) != 2) printf("KO, prime after 2 is 2");
-	else if ((ret = ft_find_next_prime(8)) != 11) printf("KO, prime after 8 is 11");
-	else if ((ret = ft_find_next_prime(4)) != 5) printf("KO, prime after 4 is 5");
-	else if ((ret = ft_find_next_prime(13)) != 13) printf("KO, prime after 4 is 5");
-	else if ((ret = ft_find_next_prime(5982)) != 5987) printf("KO, prime after 5982 is 5987");
-	else if ((ret = ft_find_next_prime(-50)) != 2) printf("KO, prime after -50 is 2");
+	time_t time_bef;
+	time(&time_bef);
+
+	if ((ret = ft_find_next_prime(0)) != 2) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 0 is 2, got %i", ret);
+	else if ((ret = ft_find_next_prime(1)) != 2) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 1 is 2, got %i", ret);
+	else if ((ret = ft_find_next_prime(2)) != 2) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 2 is 2, got %i", ret);
+	else if ((ret = ft_find_next_prime(8)) != 11) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 8 is 11, got %i", ret);
+	else if ((ret = ft_find_next_prime(4)) != 5) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 4 is 5, got %i", ret);
+	else if ((ret = ft_find_next_prime(13)) != 13) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 4 is 5, got %i", ret);
+	else if ((ret = ft_find_next_prime(5982)) != 5987) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 5982 is 5987, got %i", ret);
+	else if ((ret = ft_find_next_prime(2000000000)) != 2000000011) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after 2000000000 is 2000000011, got %i", ret);
+	else if ((ret = ft_find_next_prime(-50)) != 2) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, prime after -50 is 2, got %i", ret);
+	else if ((time_bef = (time(NULL) - time_bef)) > 10) printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bKO, timeout! max time is 10 seconds, took %li", time_bef);
 	else
-		printf("OK\n");
+		printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\bOK, time: %li seconds", time_bef);
+
+	printf("               \n");
 
 	printf("\e[1;31m-- Exercício 08: \e[0m");
 
 	printf("Cheque o resutado:\n");
 
-	ft_ten_queens_puzzle();
+	time(&time_bef);
 
-	if ((ret = ft_ten_queens_puzzle()) != 724)
+	ret = ft_ten_queens_puzzle();
+
+	if ((time_bef = (time(NULL) - time_bef)) > 10)
+		printf("KO, timeout! max time is 10 seconds, took %li\n", time_bef);
+	else if (ret != 724)
 		printf("KO, wrong return, expected 724 got %i\n", ret);
+	else
+		printf("OK, time: %li seconds\n", time_bef);
 
 }
