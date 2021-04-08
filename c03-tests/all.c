@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:11:51 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/06 02:12:38 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/08 16:20:58 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int main(void)
 	char str2[] = "abcdef";
 	char str3[] = "fedcba";
 	char str4[] = {-123, -56, 6, 32, 64, 65, 66, 0};
+	char str5[] = "abcdefghijadofhiasdfj";
+	char str6[] = "abcdefghijadfedcba";
 
 	int ret0 = strcmp(str0, str1);
 	int ret1 = ft_strcmp(str0, str1);
@@ -43,6 +45,8 @@ int main(void)
 	else if ((ret0 = strcmp(str2, str3)) != (ret1 = ft_strcmp(str2, str3)))
 		printf("KO, expected %i got %i\n", ret0, ret1);
 	else if ((ret0 = strcmp(str3, str4)) != (ret1 = ft_strcmp(str3, str4)))
+		printf("KO, expected %i got %i\n", ret0, ret1);
+	else if ((ret0 = strcmp(str5, str6)) != (ret1 = ft_strcmp(str5, str6)))
 		printf("KO, expected %i got %i\n", ret0, ret1);
 	else
 		printf("OK\n");
@@ -141,8 +145,6 @@ int main(void)
 		printf("KO test06\n");
 	else if (strstr(findin0, "asdfasdfstringasa") != ft_strstr(findin0, "asdfasdfstringasa"))
 		printf("KO test07\n");
-	else if (strstr(findin0, "asdfasdfstringasa") != ft_strstr(findin0, "asdfasdfstringasa"))
-		printf("KO test08\n");
 	else
 		printf("OK\n");
 
