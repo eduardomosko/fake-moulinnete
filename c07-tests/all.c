@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:51:32 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/08 05:05:26 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/09 21:07:44 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,6 +186,44 @@ void	exercicio02()
 }
 #endif
 
+#if defined(ALL) || defined(EX03)
+char	*ft_strjoin(int size, char **strs, char *sep);
+
+void	exercicio03()
+{
+	printf("\e[1;31m-- Exercício 03: \e[0m");
+	char *buf0[] = {"caminla", "eduardo", "mauricio", "larissa", "wagner", "gabriel"};
+
+	char *ret0 = NULL;
+	char *ret1 = NULL;
+	char *ret2 = NULL;
+	char *ret3 = NULL;
+
+	char *tru0 = "caminla : eduardo : mauricio : larissa : wagner : gabriel";;
+	char *tru1 = "caminla, eduardo";;
+	char *tru2 = "larissa-wagner-gabriel";;
+	char *tru3 = "eduardomauricio";;
+
+	if (strcmp(ret0 = ft_strjoin(6, buf0, " : "), tru0) != 0)
+		printf("KO, test00\n");
+	else if (strcmp(ret1 = ft_strjoin(2, buf0, ", "), tru1) != 0)
+		printf("KO, test01\n");
+	else if (strcmp(ret2 = ft_strjoin(3, buf0 + 3, "-"), tru2) != 0)
+		printf("KO, test02\n");
+	else if (strcmp(ret3 = ft_strjoin(2, buf0 + 1, ""), tru3) != 0)
+		printf("KO, test03\n");
+	else if (strcmp(ft_strjoin(0, buf0, "0"), "") != 0)
+		printf("KO, test04\n");
+	else
+		printf("OK\n");
+
+	free(ret0);
+	free(ret1);
+	free(ret2);
+	free(ret3);
+}
+#endif
+
 int	main(void)
 {
 #if defined(ALL) || defined(EX00)
@@ -196,5 +234,8 @@ int	main(void)
 #endif
 #if defined(ALL) || defined(EX02)
 	exercicio02();
+#endif
+#if defined(ALL) || defined(EX03)
+	exercicio03();
 #endif
 }
