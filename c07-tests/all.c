@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:51:32 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/09 21:07:44 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/11 02:52:54 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,6 +224,63 @@ void	exercicio03()
 }
 #endif
 
+#if defined(ALL) || defined(EX04)
+char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
+
+void exercicio04()
+{
+	printf("\e[1;31m-- Exercício 04: \e[0m");
+	fflush(stdout);
+
+	char *str0 = "101010";
+	char *str1 = "   -+-+-101010";
+	char *str2 = "   --ff";
+	char *str3 = "gff";
+	char *str4 = "42";
+
+	char *base0 = "01";
+	char *base1 = "0123456789abcdef";
+	char *base2 = "f1g23";
+	char *base3 = "0123456789";
+	char *base4 = "..1234";
+
+	char *ret0 = ft_convert_base(str0, base0, base3);
+	char *ret1 = ft_convert_base(str1, base0, base3);
+	char *ret2 = ft_convert_base(str2, base1, base3);
+	char *ret3 = ft_convert_base(str3, base2, base3);
+	char *ret4 = ft_convert_base(str4, base3, base0);
+	char *ret5 = ft_convert_base(str4, base3, base4);
+
+	int ok0 = (strcmp(ret0, "42") != 0);
+	int ok1 = (strcmp(ret1, "-42") != 0);
+	int ok2 = (strcmp(ret2, "255") != 0);
+	int ok3 = (strcmp(ret3, "50") != 0);
+	int ok4 = (strcmp(ret4, "101010") != 0);
+	int ok5 = (ret5 != NULL);
+
+	if (ok0)
+		printf("KO, test00 expected 42 got %s\n", ret0);
+	else if (ok1)
+		printf("KO, test01 expected -42 got %s\n", ret1);
+	else if (ok2)
+		printf("KO, test02 expected 255 got %s\n", ret2);
+	else if (ok3)
+		printf("KO, test03 expected 50 got %s\n", ret3);
+	else if (ok4)
+		printf("KO, test04 expected 101010 got %s\n", ret4);
+	else if (ok5)
+		printf("KO, test05 expected (null) got %s\n", ret5);
+	else
+		printf("OK\n");
+
+	free(ret0);
+	free(ret1);
+	free(ret2);
+	free(ret3);
+	free(ret4);
+}
+#endif
+
 int	main(void)
 {
 #if defined(ALL) || defined(EX00)
@@ -237,5 +294,8 @@ int	main(void)
 #endif
 #if defined(ALL) || defined(EX03)
 	exercicio03();
+#endif
+#if defined(ALL) || defined(EX04)
+	exercicio04();
 #endif
 }
