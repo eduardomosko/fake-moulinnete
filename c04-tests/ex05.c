@@ -6,7 +6,7 @@
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:07:44 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/07 14:51:09 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/04/10 01:26:09 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(void)
 	ft_atoi_base_test("\n \t\r \v \f+-+++--fdd,.fs", "abcdefgh", -347);
 	// teste com bases decimais
 	printf("Bases decimais:\n");
-	ft_atoi_base_test("\n \t\r \v \f++-++--000000,.fs", "0123456789", 0);
+	ft_atoi_base_test("\n \t\r \v \f++-++--2147483648,.fs", "0123456789", -2147483648);
 	ft_atoi_base_test("\n \t\r \v \f+-+++-+jjf,.fs", "abcdefghij", 995);
 	// teste com bases hexadecimais
 	printf("Bases hexadecimais:\n");

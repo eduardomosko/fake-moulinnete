@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.c                                             :+:      :+:    :+:   */
+/*   ex03.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 19:09:25 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/06 19:20:00 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/04/10 01:25:07 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int		main(void)
 	str = " \n \t\f\r \v -1234b67asd";
 	ft_atoi_like_test(str);
 	// quando o comportamento e diferente ao de atoi
-	str = " \n \t \r \v --+-+-+1234567asd";
-	ft_atoi_unlike_test(str, 1234567);
+	str = " \n \t \r \v --+-+-+-2147483648asd";
+	ft_atoi_unlike_test(str, -2147483648);
 	str = " \n \t\f\r \v -++-+-++1234b67asd";
 	ft_atoi_unlike_test(str, -1234);
 	return (0);

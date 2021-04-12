@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c02.c                                              :+:      :+:    :+:   */
+/*   all.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:11:51 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/04 16:13:31 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/10 00:04:37 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,19 @@ char			*ft_strlowcase(char *str);
 char			*ft_strcapitalize(char *str);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 void			ft_putstr_non_printable(char *str);
-char			*ft_print_memory(void *addr, unsigned int size);
+//char			*ft_print_memory(void *addr, unsigned int size);
 
-int main(int argc, char** argv)
+int main()
 {
 	char *mem = "Bonjour les aminches\n\b\rc  est fou\ntout\rce qu on peut faire avec\r\r\nprint_memory\n\n\r\blol\rlol\r \b";
 
+/*
 	if (argc > 1 && strcmp(argv[1], "12") == 0)
 	{
 		ft_print_memory(mem, strlen(mem));
 		return (0);
 	}
-
+*/
 	printf("-- Exercicio 00: ");
 
 	char str0[] = "Ninguem liga";
@@ -312,6 +313,7 @@ EX07:
 
 	printf("\n");
 
+/*
 	printf("-- Exercicio 12: Verifique o output\n");
 
 	printf("\nCaso 1:\n");
@@ -360,5 +362,6 @@ EX07:
 	}
 
 	printf("\n");
+*/
 }
 
