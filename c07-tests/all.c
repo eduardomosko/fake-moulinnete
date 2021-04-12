@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:51:32 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/11 02:52:54 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/11 13:42:21 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -281,6 +281,79 @@ void exercicio04()
 }
 #endif
 
+#if defined(ALL) || defined(EX00)
+char				**ft_split(char *str, char *charset);
+
+int					list_cmp(char **list1, char **list2)
+{
+	while (*list1 != NULL && *list2 != NULL && strcmp(*list1, *list2) == 0)
+	{
+		++list1;
+		++list2;
+	}
+	return (list1 == NULL && list2 == NULL);
+}
+
+void				print_list(char **list)
+{
+	printf("{");
+	while (*list != NULL)
+		printf("\"%s\", ", *list++);
+	printf("NULL}");
+}
+
+void				free_list(char **list)
+{
+	char **itlist = list;
+
+	while (*itlist != NULL)
+		free(*itlist++);
+	free(list);
+}
+
+void				exercicio05()
+{
+	printf("\e[1;31m-- Exercício 05: \e[0m");
+
+	char **ret0 = ft_split("a,b,c,d,e,f", ",");
+	char **ret1 = ft_split("a,b,,c,d,e,f", ",");
+	char **ret2 = ft_split(",, , ,a,b,,c,d,e,f", ", ");
+
+	char *tru0[] = {"a", "b", "c", "d", "e", "f", NULL};
+
+	if (list_cmp(ret0, tru0) != 0)
+	{
+		printf("KO, expected ");
+		print_list(tru0);
+		printf(" got ");
+		print_list(ret0);
+		printf("\n");
+	}
+	else if (list_cmp(ret1, tru0) != 0)
+	{
+		printf("KO, expected ");
+		print_list(tru0);
+		printf(" got ");
+		print_list(ret1);
+		printf("\n");
+	}
+	else if (list_cmp(ret2, tru0) != 0)
+	{
+		printf("KO, expected ");
+		print_list(tru0);
+		printf(" got ");
+		print_list(ret2);
+		printf("\n");
+	}
+	else
+		printf("OK\n");
+
+	free_list(ret0);
+	free_list(ret1);
+	free_list(ret2);
+}
+#endif
+
 int	main(void)
 {
 #if defined(ALL) || defined(EX00)
@@ -297,5 +370,8 @@ int	main(void)
 #endif
 #if defined(ALL) || defined(EX04)
 	exercicio04();
+#endif
+#if defined(ALL) || defined(EX05)
+	exercicio05();
 #endif
 }
