@@ -30,6 +30,6 @@ int	main(void)
 	ft_putnbr(INT_MAX);
 	write(1, "\nINT_MIN: ", 10);
 	ft_putnbr(INT_MIN);
-	write(1, "\n",1);
+	write(1, "\n", 1);
 	return (0);
 }
