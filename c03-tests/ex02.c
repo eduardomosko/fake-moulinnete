@@ -34,7 +34,7 @@ int	main(void)
 	strcpy(ft_src, "galera");
 	strcpy(ft_dest, "alo ");
 	result = strcat(dest, src);
-	ft_result = strcat(ft_dest, ft_src);
+	ft_result = ft_strcat(ft_dest, ft_src);
 	if (ft_dest != ft_result)
 		printf("KO, return value of ft_strcar is different of ft_dest. ft_strcar=%p ft_dest=%p\n", ft_result, ft_dest);
 	else if (strcmp(result, ft_result) != 0)
