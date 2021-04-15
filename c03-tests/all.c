@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:11:51 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/09 21:25:08 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/15 03:19:38 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb);
 char	*ft_strstr(char *str, char *to_find);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 
+int	same_sign(int a, int b)
+{
+	if (a < 0 && b < 0)
+		return (0);
+	else if (a > 0 && b > 0)
+		return (0);
+	else if (a == 0 && b == 0)
+		return (0);
+	return (1);
+}
+
 int main(void)
 {
 	printf("-- Exercício 00: ");
@@ -38,15 +49,15 @@ int main(void)
 	int ret0 = strcmp(str0, str1);
 	int ret1 = ft_strcmp(str0, str1);
 
-	if (strcmp(str0, str1) != ft_strcmp(str0, str1))
+	if (same_sign(strcmp(str0, str1), ft_strcmp(str0, str1)))
 		printf("KO, expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strcmp(str1, str2)) != (ret1 = ft_strcmp(str1, str2)))
+	else if (same_sign((ret0 = strcmp(str1, str2)), (ret1 = ft_strcmp(str1, str2))))
 		printf("KO, expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strcmp(str2, str3)) != (ret1 = ft_strcmp(str2, str3)))
+	else if (same_sign((ret0 = strcmp(str2, str3)), (ret1 = ft_strcmp(str2, str3))))
 		printf("KO, expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strcmp(str3, str4)) != (ret1 = ft_strcmp(str3, str4)))
+	else if (same_sign((ret0 = strcmp(str3, str4)), (ret1 = ft_strcmp(str3, str4))))
 		printf("KO, expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strcmp(str5, str6)) != (ret1 = ft_strcmp(str5, str6)))
+	else if (same_sign((ret0 = strcmp(str5, str6)), (ret1 = ft_strcmp(str5, str6))))
 		printf("KO, expected %i got %i\n", ret0, ret1);
 	else
 		printf("OK\n");
@@ -55,19 +66,19 @@ int main(void)
 	int str0l = strlen(str0);
 	int str1l = strlen(str1);
 
-	if ((ret0 = strncmp(str0, str1, str0l) != (ret1 = ft_strncmp(str0, str1, str0l))))
+	if (same_sign((ret0 = strncmp(str0, str1, str0l)), (ret1 = ft_strncmp(str0, str1, str0l))))
 		printf("KO, test00 expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strncmp(str2, str3, 0)) != (ret1 = ft_strncmp(str2, str3, 0)))
+	else if (same_sign((ret0 = strncmp(str2, str3, 0)), (ret1 = ft_strncmp(str2, str3, 0))))
 		printf("KO, test01 expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strncmp(str1, str2, str1l)) != (ret1 = ft_strncmp(str1, str2, str1l)))
+	else if (same_sign((ret0 = strncmp(str1, str2, str1l)), (ret1 = ft_strncmp(str1, str2, str1l))))
 		printf("KO, test02 expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strncmp(str2, str3, 2)) != (ret1 = ft_strncmp(str2, str3, 2)))
+	else if (same_sign((ret0 = strncmp(str2, str3, 2)), (ret1 = ft_strncmp(str2, str3, 2))))
 		printf("KO, test03 expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strncmp(str3, str4, 2)) != (ret1 = ft_strncmp(str3, str4, 2)))
+	else if (same_sign((ret0 = strncmp(str3, str4, 2)), (ret1 = ft_strncmp(str3, str4, 2))))
 		printf("KO, test04 expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strncmp(str3, str4, 100)) != (ret1 = ft_strncmp(str3, str4, 100)))
+	else if (same_sign((ret0 = strncmp(str3, str4, 100)), (ret1 = ft_strncmp(str3, str4, 100))))
 		printf("KO, test05 expected %i got %i\n", ret0, ret1);
-	else if ((ret0 = strncmp(str0, str1, 100)) != (ret1 = ft_strncmp(str0, str1, 100)))
+	else if (same_sign((ret0 = strncmp(str0, str1, 100)), (ret1 = ft_strncmp(str0, str1, 100))))
 		printf("KO, test06 expected %i got %i\n", ret0, ret1);
 	else
 		printf("OK\n");
