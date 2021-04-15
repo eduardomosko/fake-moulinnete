@@ -1,4 +1,4 @@
-# fake-moulinnete
+# Fake Moulinnete
 Testes que talvez funcionem corretamente para as listas da 42
 
 Nessa aquivo criamos (emendes- & vgoncalv) testes que tentam checar as mesmas coisas que a Moulinette checa. Atenção, isso foi feito por outros campers e não é um programa oficial e é importe que você consiga entender o funcionamento de cada exercício e seja capaz de escrever seus próprios testes. Pense nesse repositório como uma checagem extra antes de enviar.
@@ -17,3 +17,8 @@ Para testar um arquivo por vez, é assim:
 ```bash
 $ gcc -Wall -Wextra -Werror [seu arquivo] [ex**.c] [flags adicionais]
 ```
+
+Avisos
+---
+- O C06 consiste de programas, entao nao fizemos testes para eles.
+- Caso encontrem algum erro, favor nos comunicar no Discord.

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex07.c                                             :+:      :+:    :+:   */
+/*   ex01.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 17:49:28 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/06 16:39:17 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/04/13 14:22:33 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/04/13 14:29:31 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "ft_boolean.h"
 
-void	ft_putnbr(int nb);
-
-int	main(void)
+void	ft_putstr(char *str)
 {
-	write(1, "-1: ", 4);
-	ft_putnbr(-1);
-	write(1, "\n1: ", 4);
-	ft_putnbr(1);
-	write(1, "\n-10: ", 6);
-	ft_putnbr(-10);
-	write(1, "\n10: ", 5);
-	ft_putnbr(10);
-	write(1, "\nINT_MAX: ", 10);
-	ft_putnbr(INT_MAX);
-	write(1, "\nINT_MIN: ", 10);
-	ft_putnbr(INT_MIN);
-	write(1, "\n", 1);
-	return (0);
+	while (*str)
+		write(1, str++, 1);
+}
+
+t_bool	ft_is_even(int nbr)
+{
+	return ((EVEN(nbr)) ? TRUE : FALSE);
+}
+
+int		main(int argc, char *argv[])
+{
+	(void)argv;
+	if (ft_is_even(argc - 1) == TRUE)
+		ft_putstr(EVEN_MSG);
+	else
+		ft_putstr(ODD_MSG);
+	return (SUCCESS);
 }

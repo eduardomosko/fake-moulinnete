@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:51:32 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/13 19:48:59 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/15 03:20:26 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -295,7 +295,7 @@ void exercicio04()
 }
 #endif
 
-#if defined(ALL) || defined(EX00)
+#if defined(ALL) || defined(EX05)
 char				**ft_split(char *str, char *charset);
 
 int					list_cmp(char **list1, char **list2)

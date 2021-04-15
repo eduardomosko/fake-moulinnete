@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex07.c                                             :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 17:49:28 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/06 16:39:17 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/04/13 15:17:55 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/04/13 15:20:03 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <unistd.h>
-#include <stdio.h>
+#ifndef FT_H
+# define FT_H
 
-void	ft_putnbr(int nb);
+void	ft_putchar(char c);
 
-int	main(void)
-{
-	write(1, "-1: ", 4);
-	ft_putnbr(-1);
-	write(1, "\n1: ", 4);
-	ft_putnbr(1);
-	write(1, "\n-10: ", 6);
-	ft_putnbr(-10);
-	write(1, "\n10: ", 5);
-	ft_putnbr(10);
-	write(1, "\nINT_MAX: ", 10);
-	ft_putnbr(INT_MAX);
-	write(1, "\nINT_MIN: ", 10);
-	ft_putnbr(INT_MIN);
-	write(1, "\n", 1);
-	return (0);
-}
+void	ft_swap(int *a, int *b);
+
+void	ft_putstr(char *str);
+
+int		ft_strlen(char *str);
+
+int		ft_strcmp(char *s1, char *s2);
+
+#endif

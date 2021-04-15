@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex07.c                                             :+:      :+:    :+:   */
+/*   ex05.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 17:49:28 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/06 16:39:17 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/04/12 21:38:10 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/04/14 00:46:50 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void	ft_putnbr(int nb);
+char	**ft_split(char *str, char *charset);
 
-int	main(void)
+int		main(void)
 {
-	write(1, "-1: ", 4);
-	ft_putnbr(-1);
-	write(1, "\n1: ", 4);
-	ft_putnbr(1);
-	write(1, "\n-10: ", 6);
-	ft_putnbr(-10);
-	write(1, "\n10: ", 5);
-	ft_putnbr(10);
-	write(1, "\nINT_MAX: ", 10);
-	ft_putnbr(INT_MAX);
-	write(1, "\nINT_MIN: ", 10);
-	ft_putnbr(INT_MIN);
-	write(1, "\n", 1);
+	int		str_n;
+	char	*str;
+	char	*sep;
+	char	**strs;
+
+	str = "WfrONjnyoiSQ5GYKxJ6NSlqrUtPkklcoKR f";
+	sep = "ySzX";
+	strs = ft_split(str, sep);
+	str_n = 0;
+	while (strs[str_n] != 0)
+	{
+		printf("[%d]: %s\n", str_n, strs[str_n]);
+		str_n++;
+	}
+	free(strs);
 	return (0);
 }

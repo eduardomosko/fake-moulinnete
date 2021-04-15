@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex07.c                                             :+:      :+:    :+:   */
+/*   ex03.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 17:49:28 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/06 16:39:17 by vgoncalv         ###   ########.fr       */
+/*   Created: 2021/04/11 20:03:15 by vgoncalv          #+#    #+#             */
+/*   Updated: 2021/04/14 02:57:38 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void	ft_putnbr(int nb);
+char	*ft_strjoin(int size, char **strs, char *sep);
 
-int	main(void)
+int		main(void)
 {
-	write(1, "-1: ", 4);
-	ft_putnbr(-1);
-	write(1, "\n1: ", 4);
-	ft_putnbr(1);
-	write(1, "\n-10: ", 6);
-	ft_putnbr(-10);
-	write(1, "\n10: ", 5);
-	ft_putnbr(10);
-	write(1, "\nINT_MAX: ", 10);
-	ft_putnbr(INT_MAX);
-	write(1, "\nINT_MIN: ", 10);
-	ft_putnbr(INT_MIN);
-	write(1, "\n", 1);
+	int		offset;
+	char	**strs;
+	char	*res_str;
+
+	strs = malloc(3 * sizeof(char *));
+	if (strs == NULL)
+		return (1);
+	offset = 0;
+	while (offset < 3)
+	{
+		strs[offset] = "abc";
+		offset++;
+	}
+	res_str = ft_strjoin(3, strs, ", ");
+	if (res_str == NULL)
+		return (1);
+	printf("res: %s\n", res_str);
+	free(strs);
+	free(res_str);
 	return (0);
 }
