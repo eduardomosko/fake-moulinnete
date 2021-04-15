@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:51:32 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/11 13:42:21 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/13 19:48:59 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,6 +198,9 @@ void	exercicio03()
 	char *ret1 = NULL;
 	char *ret2 = NULL;
 	char *ret3 = NULL;
+	char *ret4 = NULL;
+	char *ret5 = NULL;
+	char *ret6 = NULL;
 
 	char *tru0 = "caminla : eduardo : mauricio : larissa : wagner : gabriel";;
 	char *tru1 = "caminla, eduardo";;
@@ -212,8 +215,12 @@ void	exercicio03()
 		printf("KO, test02\n");
 	else if (strcmp(ret3 = ft_strjoin(2, buf0 + 1, ""), tru3) != 0)
 		printf("KO, test03\n");
-	else if (strcmp(ft_strjoin(0, buf0, "0"), "") != 0)
+	else if (strcmp(ret4 = ft_strjoin(0, buf0, "0"), "") != 0)
 		printf("KO, test04\n");
+	else if (strcmp(ret5 = ft_strjoin(2, buf0 + 2, "0"), "mauricio0larissa") != 0)
+		printf("KO, test05\n");
+	else if (strcmp(ret6 = ft_strjoin(-3, buf0 + 2, "0"), "") != 0)
+		printf("KO, test06\n");
 	else
 		printf("OK\n");
 
@@ -221,6 +228,9 @@ void	exercicio03()
 	free(ret1);
 	free(ret2);
 	free(ret3);
+	free(ret4);
+	free(ret5);
+	free(ret6);
 }
 #endif
 
@@ -250,26 +260,30 @@ void exercicio04()
 	char *ret3 = ft_convert_base(str3, base2, base3);
 	char *ret4 = ft_convert_base(str4, base3, base0);
 	char *ret5 = ft_convert_base(str4, base3, base4);
+	char *ret6 = ft_convert_base("-80000000", "0123456789abcdef", "0123456789");
 
-	int ok0 = (strcmp(ret0, "42") != 0);
-	int ok1 = (strcmp(ret1, "-42") != 0);
-	int ok2 = (strcmp(ret2, "255") != 0);
-	int ok3 = (strcmp(ret3, "50") != 0);
-	int ok4 = (strcmp(ret4, "101010") != 0);
-	int ok5 = (ret5 != NULL);
+	int not_ok0 = (strcmp(ret0, "42") != 0);
+	int not_ok1 = (strcmp(ret1, "-42") != 0);
+	int not_ok2 = (strcmp(ret2, "255") != 0);
+	int not_ok3 = (strcmp(ret3, "50") != 0);
+	int not_ok4 = (strcmp(ret4, "101010") != 0);
+	int not_ok5 = (ret5 != NULL);
+	int not_ok6 = (strcmp(ret6, "-2147483648") != 0);
 
-	if (ok0)
+	if (not_ok0)
 		printf("KO, test00 expected 42 got %s\n", ret0);
-	else if (ok1)
+	else if (not_ok1)
 		printf("KO, test01 expected -42 got %s\n", ret1);
-	else if (ok2)
+	else if (not_ok2)
 		printf("KO, test02 expected 255 got %s\n", ret2);
-	else if (ok3)
+	else if (not_ok3)
 		printf("KO, test03 expected 50 got %s\n", ret3);
-	else if (ok4)
+	else if (not_ok4)
 		printf("KO, test04 expected 101010 got %s\n", ret4);
-	else if (ok5)
+	else if (not_ok5)
 		printf("KO, test05 expected (null) got %s\n", ret5);
+	else if (not_ok6)
+		printf("KO, test06 expected -2147483648 got %s\n", ret5);
 	else
 		printf("OK\n");
 
@@ -318,8 +332,10 @@ void				exercicio05()
 	char **ret0 = ft_split("a,b,c,d,e,f", ",");
 	char **ret1 = ft_split("a,b,,c,d,e,f", ",");
 	char **ret2 = ft_split(",, , ,a,b,,c,d,e,f", ", ");
+	char **ret3 = ft_split("", ", ");
 
 	char *tru0[] = {"a", "b", "c", "d", "e", "f", NULL};
+	char *tru1[] = {NULL};
 
 	if (list_cmp(ret0, tru0) != 0)
 	{
@@ -338,6 +354,14 @@ void				exercicio05()
 		printf("\n");
 	}
 	else if (list_cmp(ret2, tru0) != 0)
+	{
+		printf("KO, expected ");
+		print_list(tru0);
+		printf(" got ");
+		print_list(ret2);
+		printf("\n");
+	}
+	else if (list_cmp(ret3, tru1) != 0)
 	{
 		printf("KO, expected ");
 		print_list(tru0);
