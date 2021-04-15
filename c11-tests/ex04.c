@@ -6,7 +6,7 @@
 /*   By: emendes- <emendes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 15:28:41 by emendes-          #+#    #+#             */
-/*   Updated: 2021/04/15 18:49:01 by emendes-         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:35:55 by emendes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ int	bigger_than(int a, int b)
 
 int main(void)
 {
-	int tab0[] = {1, 2, 3, 4, 5};
+	int tab0[] = {1, 1, 1, 2, 2, 2, 3, 4, 5};
 	int tab1[] = {1, 7, 3, 4, 5};
+	int tab2[] = {7, 7, 7, 7, 6, 6, 6, 6, 5, 5, 4, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1};
 
-	printf("%i\n", ft_is_sort(tab0, 5, bigger_than));
-	printf("%i\n", ft_is_sort(tab1, 5, bigger_than));
+	printf("expect 1 got %i\n", ft_is_sort(tab0, 9, bigger_than));
+	printf("expect 0 got %i\n", ft_is_sort(tab1, 5, bigger_than));
+	printf("expect 1 got %i\n", ft_is_sort(tab2, 26, bigger_than));
 }
