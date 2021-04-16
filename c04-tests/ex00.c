@@ -21,7 +21,7 @@ void	ft_strlen_test(char *str)
 	int ft_size;
 
 	size = strlen(str);
-	ft_size = strlen(str);
+	ft_size = ft_strlen(str);
 	if (size != ft_size)
 		printf("> KO, return value of ft_strlen differs from expected. expected: %d, got: %d\n", size, ft_size);
 	else
