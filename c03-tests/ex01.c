@@ -22,7 +22,7 @@ void	ft_strncmp_test(char *s1, char *s2, unsigned int n)
 	int ft_res;
 
 	res = strncmp(s1, s2, n);
-	ft_res = strncmp(s1, s2, n);
+	ft_res = ft_strncmp(s1, s2, n);
 	if (res != ft_res)
 		printf("> KO, expected: %d, got: %d\n", res, ft_res);
 	else
