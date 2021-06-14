@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ex00.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rda-silv <rda-silv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 13:31:27 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/03 13:47:32 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/06/14 23:49:38 by rda-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strcpy(char *dest, char *src);
 
 int	main(void)
 {
-	char *src;
-	char *dest;
-	char *ret;
+	char	*src;
+	char	*dest;
+	char	*ret;
 
 	src = calloc(11, sizeof(char));
 	src = "0123456789";
