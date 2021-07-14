@@ -34,6 +34,11 @@ int		main(void)
 	char	*s1 = "abcdefghi";
 	char	*s2 = "abcdEfghi";
 	char	s3[] = {'a', 'b', -23, 'd', 'e', 'f', 'g', 'h', 'i', '\0'};
+	char	*s4 = "abcdefghi";
+	char	*s5 = "abcd";
+	char	*s6 = "abcdefghijklmn";
+	char	*s7 = "";
+
 	int		offset;
 
 	offset = 0;
@@ -55,6 +60,34 @@ int		main(void)
 	while (offset < 10)
 	{
 		ft_strncmp_test(s2, s3, offset);
+		offset++;
+	}
+	offset = 0;		// Comparing equal strings. Should return 0.
+	printf("[4] Testing strings \"%s\" and \"%s\" (same strings)\n", s1, s4);
+	while (offset < 10)
+	{
+		ft_strncmp_test(s1, s4, offset);
+		offset++;
+	}
+	offset = 0;		// Comparing with a shorter string (s5 lenght 5).
+	printf("[5] Testing strings \"%s\" and \"%s\"\n", s1, s5);
+	while (offset < 10)
+	{
+		ft_strncmp_test(s1, s5, offset);
+		offset++;
+	}
+	offset = 0;		// Comparing with a longer string (s6 lenght 15).
+	printf("[6] Testing strings \"%s\" and \"%s\"\n", s1, s6);
+	while (offset < 10)
+	{
+		ft_strncmp_test(s1, s6, offset);
+		offset++;
+	}
+	offset = 0;		// Comparing with an empty string (s7).
+	printf("[7] Testing strings \"%s\" and \"%s\"\n", s1, s7);
+	while (offset < 10)
+	{
+		ft_strncmp_test(s1, s7, offset);
 		offset++;
 	}
 	return (0);
