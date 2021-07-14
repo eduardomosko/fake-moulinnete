@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ex02.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dludtke- <dludtke-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: leoperei <leoperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 22:04:51 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/16 00:22:46 by dludtke-         ###   ########.fr       */
+/*   Updated: 2021/06/18 20:34:09 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,7 @@ int		ft_ultimate_range(int **range, int min, int max);
 
 int		main(void)
 {
-	int res;
 	int offset;
-	int *range;
-
-	res = ft_ultimate_range(&range, 0, 8);
-	if (res == -1)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	offset = 0;
-	while (offset < 8)
-	{
-		printf("%d ", range[offset]);
-		offset++;
-	}
-	printf("\nres: %d", res);
-	printf("\n");
-
 	int *arr1;
 	int *arr2;
 	int *arr3;
@@ -57,7 +39,7 @@ int		main(void)
 	size6 = ft_ultimate_range(&arr6, -2, 0);
 
 	offset = 0;
-	while (offset < 1)
+	while (offset < size1)
 	{
 		printf("%d ", arr1[offset]);
 		offset++;
@@ -67,7 +49,7 @@ int		main(void)
 	printf("| size %d", size1);
 	printf("\n");
 	offset = 0;
-	while (offset < 3)
+	while (offset < size2)
 	{
 		printf("%d ", arr2[offset]);
 		offset++;
@@ -77,7 +59,7 @@ int		main(void)
 	printf("| size %d", size2);
 	printf("\n");
 	offset = 0;
-	while (offset < 2)
+	while (offset < size3)
 	{
 		printf("%d ", arr3[offset]);
 		offset++;
@@ -87,7 +69,17 @@ int		main(void)
 	printf("| size %d", size3);
 	printf("\n");
 	offset = 0;
-	while (offset < 10)
+	while (offset < size4)
+	{
+		printf("%d ", arr4[offset]);
+		offset++;
+	}
+	printf("| min %d ", 0);
+	printf("| max %d ", 10);
+	printf("| size %d", size4);
+	printf("\n");
+	offset = 0;
+	while (offset < size5)
 	{
 		printf("%d ", arr5[offset]);
 		offset++;
@@ -97,7 +89,7 @@ int		main(void)
 	printf("| size %d", size5);
 	printf("\n");
 	offset = 0;
-	while (offset < 2)
+	while (offset < size6)
 	{
 		printf("%d ", arr6[offset]);
 		offset++;
@@ -105,5 +97,6 @@ int		main(void)
 	printf("| min %d ", -2);
 	printf("| max %d ", 0);
 	printf("| size %d", size6);
+	printf("\n");
 	return (0);
 }

@@ -11,36 +11,31 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 void	ft_rev_int_tab(int *tab, int size);
 
 int	main(void)
 {
-	int *tab;
-	int counter;
+	int result[10] = {9,8,7,6,5,4,3,2,1,0};
+	int tab[10] = {0,1,2,3,4,5,6,7,8,9};
+	int error;
 
-	tab = calloc(10, sizeof(int));
-	counter = 0;
-	while (counter < 10)
-	{
-		tab[counter] = counter;
-		counter++;
-	}
-	counter = 0;
-	while (counter < 10)
-	{
-		printf("%d ", tab[counter]);
-		counter++;
-	}
-	printf("\n");
+	printf("  Original: 0 1 2 3 4 5 6 7 8 9\n");
+	printf("  Expected: 9 8 7 6 5 4 3 2 1 0\n");
 	ft_rev_int_tab(tab, 10);
-	counter = 0;
-	while (counter < 10)
-	{
-		printf("%d ", tab[counter]);
-		counter++;
-	}
+
+	error = 0;
+	for(int i = 0; i < 10; i++)
+		if (result[i] != tab[i])
+			error = 1;
+	if (error)
+		printf("KO: ");
+	else
+		printf("OK: ");
+
+	printf("Result: ");
+	for(int i = 0; i < 10; i++)
+		printf("%d ", tab[i]);
 	printf("\n");
 	return (0);
 }

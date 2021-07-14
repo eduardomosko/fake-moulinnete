@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ex00.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: leoperei <leoperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:41:57 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/04/02 03:14:24 by vgoncalv         ###   ########.fr       */
+/*   Updated: 2021/06/18 17:33:22 by leoperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	main(void)
 {
 	int	c;
 
+	printf("Expected:\n0123456789\nResult: \n");
+
 	c = '0';
 	while (c <= '9')
-	{
-		ft_putchar(c);
-		c++;
-	}
+		ft_putchar(c++);
 	ft_putchar('\n');
+
 	return (0);
 }
