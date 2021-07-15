@@ -37,11 +37,8 @@ int	main(void)
 	ptr7 = &ptr6;
 	ptr8 = &ptr7;
 	ptr9 = &ptr8;
-	printf("    Before: %d\n", *********ptr9);
+	printf("Before: %d\n", *********ptr9);
 	ft_ultimate_ft(ptr9);
-	if (*********ptr9 == 42)
-		printf("OK: After: %d\n", *********ptr9);
-	else
-		printf("KO: After: %d\n", *********ptr9);
+	printf("After: %d\n", *********ptr9);
 	return (0);
 }

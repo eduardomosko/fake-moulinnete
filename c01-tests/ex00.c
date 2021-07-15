@@ -16,14 +16,11 @@ void	ft_ft(int *nbr);
 
 int	main(void)
 {
-	int	nbr;
+	int *nbr;
+	int	n;
 
-	nbr = 24;
-	printf("    Before: %d\n", nbr);
-	ft_ft(&nbr);
-	if (nbr == 42)
-		printf("OK: After: %d\n", nbr);
-	else
-		printf("KO: After: %d\n", nbr);
+	nbr = &n;
+	ft_ft(nbr);
+	printf("n: %d, *nbr: %d, n_address: %p\n", n, *nbr, nbr);
 	return (0);
 }

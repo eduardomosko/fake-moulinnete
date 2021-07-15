@@ -3,29 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ex04.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leoperei <leoperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vgoncalv <vgoncalv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 19:31:50 by vgoncalv          #+#    #+#             */
-/*   Updated: 2021/06/18 17:54:07 by leoperei         ###   ########.fr       */
+/*   Updated: 2021/03/31 19:37:42 by vgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
 void	ft_is_negative(int n);
 
 int	main(void)
 {
-	write(1, "-2: ", 4);
-	ft_is_negative(-2);
-	write(1, "\n-1: ", 5);
-	ft_is_negative(-1);
-	write(1, "\n 0: ", 5);
-	ft_is_negative(0);
-	write(1, "\n 1: ", 5);
-	ft_is_negative(1);
-	write(1, "\n 2: ", 5);
-	ft_is_negative(2);
-	write(1, "\n", 1);
+	int i;
+	
+	i = -2;
+	while (i <= 2)
+	{
+		ft_is_negative(i);
+		i++;
+	}
+	printf("\n");
 	return (0);
 }

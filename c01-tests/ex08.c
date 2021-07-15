@@ -11,37 +11,31 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void	ft_sort_int_tab(int *tab, int size);
 
 int	main(void)
 {
-	int tab[10] = {9,0,7,4,5,3,1,2,8,6};
-	int result[10] = {0,1,2,3,4,5,6,7,8,9};
-	int error;
+	int *tab;
+	int counter;
 
-	printf("  Original: ");
-	for(int i = 0; i < 10; i++)
-		printf("%d ", tab[i]);
-	printf("\n");
-	printf("  Expected: ");
-	for(int i = 0; i < 10; i++)
-		printf("%d ", result[i]);
-	printf("\n");
+	srand(1);
+	counter = 0;
+	tab = calloc(10, sizeof(int));
+	while (counter < 10)
+	{
+		tab[counter] = rand() % 100;
+		counter++;
+	}
+	counter = -1;
+	while (9 > counter++)
+		printf("%d ", tab[counter]);
 	ft_sort_int_tab(tab, 10);
-
-	error = 0;
-	for(int i = 0; i < 10; i++)
-		if (result[i] != tab[i])
-			error = 1;
-	if (error)
-		printf("KO: ");
-	else
-		printf("OK: ");
-
-	printf("Result: ");
-	for(int i = 0; i < 10; i++)
-		printf("%d ", tab[i]);
-	printf("\n");
+	printf("%c", '\n');
+	counter = -1;
+	while (9 > counter++)
+		printf("%d ", tab[counter]);
+	printf("%c", '\n');
 	return (0);
 }

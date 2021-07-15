@@ -10,15 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 void	ft_putstr(char *str);
 
 int	main(void)
 {
 	char *str = "alow galera\n";
 
-	printf("Expected:\nalow galera\nResult:\n");
 	ft_putstr(str);
 	return (0);
 }

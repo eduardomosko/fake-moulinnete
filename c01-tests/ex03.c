@@ -11,28 +11,23 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void	ft_div_mod(int a, int b, int *div, int *mod);
 
 int	main(void)
 {
-	int div;
-	int mod;
+	int a;
+	int b;
+	int *div;
+	int *mod;
 
-	div = 0;
-	mod = 0;
-	ft_div_mod(42, 10, &div, &mod);
-	if (div == 4 && mod == 2)
-		printf("OK: a: 42, b: 10, div: %d, mod: %d\n", div, mod);
-	else
-		printf("KO: a: 42, b: 10, div: %d, mod: %d\n", div, mod);
-
-	div = 0;
-	mod = 0;
-	ft_div_mod(42, 0, &div, &mod);
-	if (div == 0 && mod == 0)
-		printf("OK: a: 42, b: 0, div: %d, mod: %d\n", div, mod);
-	else
-		printf("KO: a: 42, b: 0, div: %d, mod: %d\n", div, mod);
+	a = 42;
+	b = 10;
+	div = calloc(1, sizeof(int));
+	mod = calloc(1, sizeof(int));
+	ft_div_mod(a, b, div, mod);
+	printf("a: %d, b: %d, div: %p, *div: %d, mod: %p, *mod: %d\n",
+			a, b, div, *div, mod, *mod);
 	return (0);
 }
