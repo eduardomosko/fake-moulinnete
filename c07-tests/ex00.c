@@ -15,7 +15,7 @@
 
 char	*ft_strdup(char *str);
 
-int		main(void)
+int	main(void)
 {
 	char	*str;
 	char	*str_copy;
